@@ -1,0 +1,4 @@
+name,mtu,speed,duplex
+GigabitEthernet1/0/1,1500,1000,auto
+GigabitEthernet1/0/2,1500,100,auto
+GigabitEthernet1/0/3,1500,1000,auto

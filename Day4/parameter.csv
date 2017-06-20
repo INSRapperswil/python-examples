@@ -1,0 +1,4 @@
+hostname,domain,enable_secret,user_name,user_pw,privilege,dns_server1,dns_server2,mgmt_vlan,mgmt_ip,mgmt_mask,mgmt_ipv6,mgmt_gw,mgmt_gwv6,syslog_server1
+access01,lab.local,cisco,cisco,cisco,15,8.8.8.8,8.8.4.4,99,172.16.99.11,255.255.255.0,2001:db8:beef:cafe::B,172.16.99.1,2001:db8:beef:cafe::1,syslog.lab.local
+access02,lab.local,cisco,cisco,cisco,15,8.8.8.8,8.8.4.4,99,172.16.99.12,255.255.255.0,2001:db8:beef:cafe::C,172.16.99.1,2001:db8:beef:cafe::1,syslog.lab.local
+access03,lab.local,cisco,cisco,cisco,15,8.8.8.8,,99,172.16.99.13,255.255.255.0,2001:db8:beef:cafe::D,172.16.99.1,2001:db8:beef:cafe::1,syslog.lab.local

@@ -1,0 +1,46 @@
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+system mtu routing 1500
+!
+hostname {{ hostname }}
+!
+ip ssh version 2
+!
+no ip http server
+no ip http secure-server
+!
+service password-encryption
+!
+enable secret {{ enable_secret }}
+username {{ user_name }} privilege {{ privilege }} secret {{ user_pw }}
+!
+ip domain-name {{ domain }}
+!
+ip name-server {{ dns_server1 }}
+! {% if dns_server2 %}
+ip name-server {{ dns_server2 }}
+! {% endif %}
+interface Vlan{{ mgmt_vlan }}
+ description *** Management VLAN ***
+ ip address {{ mgmt_ip }} {{ mgmt_mask }}
+ no ip route-cache
+ ipv6 address {{ mgmt_ipv6 }}
+!
+ip default-gateway {{ mgmt_gw }}
+ipv6 route ::/0 {{ mgmt_gwv6 }}
+!
+archive
+ log config
+  logging enable
+  notify syslog contenttype plaintext
+  hidekeys
+!
+logging {{ syslog_server1 }}
+!
+line con 0
+ exec-timeout 5 0
+!
+line vty 0 15
+ transport input ssh
+!
