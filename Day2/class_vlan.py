@@ -1,4 +1,4 @@
-class Vlan(object):
+class Vlan:
     def __init__(self, id, name):
         self.name = name
         self.id = id
@@ -29,7 +29,6 @@ class Vlan(object):
         interfaces.sort()
         result = ''
         for interface, config in interfaces:
-            # result += interface + '\n' + config
             result += '\n'.join([interface, config])
         return result
 

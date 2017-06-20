@@ -1,3 +1,6 @@
+import requests
+from requests.exceptions import ConnectionError, Timeout
+
 try:
     data = ['spam', 'eggs', 'bacon']
     print(data[100])
@@ -11,9 +14,6 @@ try:
 except KeyError as e:
     print(e)
 
-import requests
-from requests.exceptions import ConnectionError, Timeout
-
 try:
     requests.get('http://www.nettowel.ch')
     print('All fine')
@@ -26,6 +26,7 @@ except Timeout:
 
 class MyError(Exception):
     pass
+
 
 try:
     raise MyError()

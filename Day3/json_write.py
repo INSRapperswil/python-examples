@@ -1,5 +1,6 @@
 import json
 
+# write single object to file
 person = {
     'firstName': 'John',
     'lastName': 'Smith',
@@ -9,10 +10,10 @@ person = {
     'zipCode': '8640'
 }
 
-out_file = open('person.json', 'w')
-json.dump(person, out_file)
-out_file.close()
+with open('person.json', 'w') as out_file:
+    json.dump(person, out_file)
 
+# write multiple objects to file
 interfaces = [
     {
         'mtu': 1500,
@@ -34,10 +35,10 @@ interfaces = [
     }
 ]
 
-out_file = open('interfaces.json', 'w')
-json.dump(interfaces, out_file)
-out_file.close()
+with open('interfaces.json', 'w') as out_file:
+    json.dump(interfaces, out_file)
 
+# convert object to json string
 vlan = {
     11: 'hr',
     12: 'finance',

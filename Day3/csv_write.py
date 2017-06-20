@@ -1,26 +1,25 @@
 import csv
 
-file_out = open('persons.csv', 'w')
-columns = ['firstName', 'lastName', 'isAlive', 'age', 'city', 'zipCode']
+# write multiple rows one by one to file
+with open('persons.csv', 'w') as file_out:
+    columns = ['firstName', 'lastName', 'isAlive', 'age', 'city', 'zipCode']
 
-writer = csv.DictWriter(file_out, fieldnames=columns)
-writer.writeheader()
-writer.writerow({'firstName': 'Baked',
-                 'lastName': 'Beans',
-                 'isAlive': True,
-                 'age': '25',
-                 'city': 'Rapperswil',
-                 'zipCode': '8640'})
-writer.writerow({'firstName': 'Scrambled',
-                 'lastName': 'Eggs',
-                 'isAlive': True,
-                 'age': '25',
-                 'city': 'Rapperswil',
-                 'zipCode': '8640'})
-file_out.close()
+    writer = csv.DictWriter(file_out, fieldnames=columns)
+    writer.writeheader()
+    writer.writerow({'firstName': 'Baked',
+                     'lastName': 'Beans',
+                     'isAlive': True,
+                     'age': '25',
+                     'city': 'Rapperswil',
+                     'zipCode': '8640'})
+    writer.writerow({'firstName': 'Scrambled',
+                     'lastName': 'Eggs',
+                     'isAlive': True,
+                     'age': '25',
+                     'city': 'Rapperswil',
+                     'zipCode': '8640'})
 
-
-
+# write multiple rows at once to file
 interfaces = [
     {
         'mtu': 1500,
@@ -29,22 +28,22 @@ interfaces = [
         'name': 'GigabitEthernet1/0/1'
     },
     {
-        'duplex': 'auto',
         'mtu': 1500,
-        'name': 'GigabitEthernet1/0/2',
-        'speed': 100
+        'speed': 100,
+        'duplex': 'auto',
+        'name': 'GigabitEthernet1/0/2'
     },
     {
         'mtu': 1500,
-        'name': 'GigabitEthernet1/0/3',
         'speed': 1000,
-        'duplex': 'auto'
+        'duplex': 'auto',
+        'name': 'GigabitEthernet1/0/3'
     }
 ]
-file_out = open('interfaces.csv', 'w')
-columns = ['name', 'mtu', 'speed', 'duplex']
 
-writer = csv.DictWriter(file_out, fieldnames=columns)
-writer.writeheader()
-writer.writerows(interfaces)
-file_out.close()
+with open('interfaces.csv', 'w') as file_out:
+    columns = ['name', 'mtu', 'speed', 'duplex']
+
+    writer = csv.DictWriter(file_out, fieldnames=columns)
+    writer.writeheader()
+    writer.writerows(interfaces)
