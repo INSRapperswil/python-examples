@@ -1,0 +1,19 @@
+interfaces = ['Gig0/1', 'Gig0/2', 'Gig0/3', 'Gig0/4']
+vlans = [100, 200, 300, 100]
+
+for position in range(len(interfaces)):
+    interface = interfaces[position]
+    vlan = vlans[position]
+    print('interface {0}'.format(interface))
+    print('  description python')
+    print('  switchport acceess vlan {0}'.format(vlan))
+    print()
+
+interfaces = ['Gig0/11', 'Gig0/12', 'Gig0/13', 'Gig0/14']
+vlans = [10, 120, 30, 11]
+
+for position in range(len(interfaces)):
+    print('interface {0}'.format(interfaces[position]))
+    print('  description python')
+    print('  switchport acceess vlan {0}'.format(vlans[position]))
+    print()
